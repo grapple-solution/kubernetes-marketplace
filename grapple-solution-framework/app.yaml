@@ -22,7 +22,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: grapple-init-v022
-  namespace: kube-system
 spec:
   template:
     spec:
