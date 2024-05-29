@@ -28,6 +28,19 @@ spec:
     spec:
       containers:
         - name: grapple-init
+          env:
+          - name: CIVO_REGION
+            value: ${CIVO_REGION}
+          - name: CIVO_CLUSTER_NAME
+            value: ${CIVO_CLUSTER_NAME}
+          - name: CIVO_EMAIL_ADDRESS
+            value: ${CIVO_EMAIL_ADDRESS}
+          - name: VERSION
+            value: ${VERSION}
+          - name: CIVO_CLUSTER_ID
+            value: ${CIVO_CLUSTER_ID}
+          - name: CIVO_MASTER_IP
+            value: ${CIVO_MASTER_IP}
           image: grpl/grapple-cli:0.2.36
           command: ["/bin/bash","-c"]
           args: ["grpl cluster install --params --TARGET_PLATFORM=CIVO --CIVO_REGION=${CIVO_REGION} --CIVO_CLUSTER=${CIVO_CLUSTER_NAME} --CIVO_EMAIL_ADDRESS=${CIVO_EMAIL_ADDRESS} --GRAPPLE_VERSION=${VERSION} --AUTO_CONFIRM=true --CIVO_CLUSTER_ID=${CIVO_CLUSTER_ID} --CIVO_MASTER_IP=${CIVO_MASTER_IP} && sleep 10000 # && grpl example deploy "]
