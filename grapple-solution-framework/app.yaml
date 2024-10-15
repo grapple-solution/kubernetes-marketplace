@@ -41,7 +41,7 @@ spec:
             value: ${CIVO_CLUSTER_ID}
           - name: CIVO_MASTER_IP
             value: ${CIVO_MASTER_IP}
-          image: grpl/grapple-cli:0.2.46
+          image: grpl/grapple-cli:0.2.124
           command: ["/bin/bash","-c"]
           args: ['grpl cluster install --params --TARGET_PLATFORM=CIVO --CIVO_REGION=${CIVO_REGION} --CIVO_CLUSTER=${CIVO_CLUSTER_NAME} --CIVO_EMAIL_ADDRESS=${CIVO_EMAIL_ADDRESS} --GRAPPLE_VERSION=${VERSION} --AUTO_CONFIRM=true --CIVO_CLUSTER_ID=${CIVO_CLUSTER_ID} --CIVO_MASTER_IP=${CIVO_MASTER_IP} # && grpl example deploy ']
       restartPolicy: Never
