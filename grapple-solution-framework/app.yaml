@@ -43,7 +43,7 @@ spec:
             value: ${CIVO_MASTER_IP}
           - name: GRAPPLE_DNS
             value: ${GRAPPLE_DNS}
-          image: grpl/grapple-cli:0.2.124
+          image: grpl/grapple-cli:0.2.131
           command: ["/bin/bash","-c"]
           args: ['grpl cluster install --params --TARGET_PLATFORM=Kubernetes --INSTALL_KUBEBLOCKS="true" --GRAPPLE_DNS=${GRAPPLE_DNS} --CIVO_REGION=${CIVO_REGION} --CIVO_CLUSTER=${CIVO_CLUSTER} --CIVO_EMAIL_ADDRESS=${CIVO_EMAIL_ADDRESS} --GRAPPLE_VERSION=${VERSION} --AUTO_CONFIRM=true --CIVO_CLUSTER_ID=${CIVO_CLUSTER_ID} --CLUSTER_IP=${CIVO_MASTER_IP} || true && sleep 10000']
       restartPolicy: Never
